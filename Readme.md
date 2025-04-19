@@ -6,6 +6,7 @@
     dism.exe /Online /Enable-Feature /All /FeatureName:Microsoft-Windows-Subsystem-Linux /NoRestart
 ```
 ```bash
+    wsl --unregister Ubuntu  # Replace "Ubuntu" with your distro name if different
     wsl --install
     wsl.exe --install -d Ubuntu
 ```
