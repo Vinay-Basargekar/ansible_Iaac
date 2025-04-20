@@ -32,6 +32,24 @@
 ```
 
 ### 4. Create a playbook via nano `install_nginx.yml` in the same directory
+```bash
+---
+- name: Install NGINX on target EC2
+  hosts: webserver
+  become: yes
+
+  tasks:
+    - name: Install NGINX
+      ansible.builtin.package:
+        name: nginx
+        state: present
+
+    - name: Start and enable NGINX service
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: true
+```
 
 ### 5. Run the playbook
 ```bash
